@@ -164,6 +164,8 @@ namespace SAAD_PROJECT
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            
             con.Open();
             cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -173,14 +175,30 @@ namespace SAAD_PROJECT
             NpgsqlDataReader dr;
             int i = 0;
             dr = cmd.ExecuteReader();
-
+           
             while (dr.Read())
             {
-                chart1.Series["NumarAfectiuni"].Points.AddXY(dr["month"].ToString(), dr["nr_afectiuni"].ToString());
+                chart1.Series["NumarPacienti"].Points.AddXY(dr["month"].ToString(), dr["nr_afectiuni"].ToString());
 
 
             }
             con.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            NpgsqlConnection conexiune;
+            string sirConectare;
+            sirConectare = "Host=localhost;Username=postgres;Password=mariana12;Database=Clinica_stomatologica";
+            conexiune = new NpgsqlConnection();
+            conexiune.ConnectionString = sirConectare;
+            conexiune.Open();
+            NpgsqlDataAdapter sda = new NpgsqlDataAdapter("select numepersoana, datanasterii, gen, adresa from persoane inner join pacient on persoane.codpersoana = pacient.codpacient", conexiune);
+            DataTable data = new DataTable();
+            sda.Fill(data);
+            dataGridView1.DataSource = data;
+            conexiune.Close();
         }
     }
 }

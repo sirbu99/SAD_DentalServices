@@ -29,19 +29,23 @@ namespace SAAD_PROJECT
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.cboPacienti = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cboAfectiuni = new System.Windows.Forms.ComboBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
+            this.cboAfectiuni = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cboPacienti
@@ -109,29 +113,18 @@ namespace SAAD_PROJECT
             this.label3.TabIndex = 9;
             this.label3.Text = "Afectiuni";
             // 
-            // cboAfectiuni
-            // 
-            this.cboAfectiuni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboAfectiuni.FormattingEnabled = true;
-            this.cboAfectiuni.Location = new System.Drawing.Point(488, 410);
-            this.cboAfectiuni.Name = "cboAfectiuni";
-            this.cboAfectiuni.Size = new System.Drawing.Size(456, 33);
-            this.cboAfectiuni.TabIndex = 10;
-            this.cboAfectiuni.Text = "Cele mai intalnite afectiuni pe luni";
-            this.cboAfectiuni.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(457, 93);
+            chartArea6.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart1.Legends.Add(legend6);
+            this.chart1.Location = new System.Drawing.Point(402, 81);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "NumarAfectiuni";
-            this.chart1.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "NumarPacienti";
+            this.chart1.Series.Add(series6);
             this.chart1.Size = new System.Drawing.Size(469, 300);
             this.chart1.TabIndex = 11;
             this.chart1.Text = "chart1";
@@ -139,19 +132,62 @@ namespace SAAD_PROJECT
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(508, 12);
+            this.button1.Location = new System.Drawing.Point(514, 10);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 65);
+            this.button1.Size = new System.Drawing.Size(251, 65);
             this.button1.TabIndex = 12;
-            this.button1.Text = "Evolutia numarului de afectiuni pe luni";
+            this.button1.Text = "Numarul pacientilor pe fiecare luna";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cboAfectiuni
+            // 
+            this.cboAfectiuni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboAfectiuni.FormattingEnabled = true;
+            this.cboAfectiuni.Location = new System.Drawing.Point(42, 414);
+            this.cboAfectiuni.Name = "cboAfectiuni";
+            this.cboAfectiuni.Size = new System.Drawing.Size(456, 33);
+            this.cboAfectiuni.TabIndex = 10;
+            this.cboAfectiuni.Text = "Cele mai intalnite afectiuni pe luni";
+            this.cboAfectiuni.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(971, 9);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(259, 61);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Vizualizare date pacienti";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(902, 81);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(429, 300);
+            this.dataGridView1.TabIndex = 14;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(526, 395);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(322, 52);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Cele mai intalnite afectiuni pe luni";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 481);
+            this.ClientSize = new System.Drawing.Size(1457, 634);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.cboAfectiuni);
@@ -162,9 +198,11 @@ namespace SAAD_PROJECT
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.cboPacienti);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,9 +215,12 @@ namespace SAAD_PROJECT
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboAfectiuni;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cboAfectiuni;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button3;
     }
 }
 
