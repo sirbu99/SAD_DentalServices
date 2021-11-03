@@ -40,20 +40,7 @@ namespace SAAD_PROJECT
 
 
 
-            cboAfectiuni.Items.Clear();
-            con.Open();
-            cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select denumireafectiune from afectiuni";
-            cmd.ExecuteNonQuery();
-            DataTable dt2 = new DataTable();
-            NpgsqlDataAdapter da2 = new NpgsqlDataAdapter(cmd);
-            da2.Fill(dt2);
-            foreach (DataRow dr2 in dt2.Rows)
-            {
-                cboAfectiuni.Items.Add(dr2["denumireafectiune"]);
-            }
-            con.Close();
+           
 
 
 
@@ -117,31 +104,7 @@ namespace SAAD_PROJECT
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            chart1.Series.Clear();
-            cmd = new NpgsqlCommand("select  count( denumireafectiune), denumireafectiune from diagnostice inner join afectiuni on afectiuni.codafectiune = diagnostice.codafectiune inner join serviciiprestate on serviciiprestate.idserviciuprestat = diagnostice.idserviciuprestat group by afectiuni.denumireafectiune where='" + cboPacienti.Text + "'", con);
-
-            /*
-            listBox1.Items.Clear();
-            cmd = new NpgsqlCommand("select denumireserviciu from persoane inner join pacient on  persoane.codpersoana = pacient.codpacient inner join programare on pacient.codpacient = programare.codpacient inner join serviciiprestate on serviciiprestate.codprogramare = programare.codprogramare inner join serviciistomatologice on serviciistomatologice.codserviciustomatologic = serviciiprestate.codserviciustomatologic where numepersoana='" + cboPacienti.Text + "'", con);
-            con.Open();
-            cmd.ExecuteNonQuery();
-            NpgsqlDataReader dr;
-            int i = 0;
-            dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                listBox1.Items.Add(dr["denumireserviciu"]);
-
-
-            }
-            con.Close();*/
-
-
-
-        }
+        
 
         private void comboBoxAfectiuni_SelectedIndexChanged(object sender, EventArgs e)
         {
