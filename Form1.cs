@@ -37,18 +37,27 @@ namespace SAAD_PROJECT
             con.Close();
 
 
-
-
-
-           
-
-
+            cboAfectiuni.Items.Clear();
+            con.Open();
+            cmd2 = con.CreateCommand();
+            cmd2.CommandType = CommandType.Text;
+            cmd2.CommandText = "select denumireafectiune from afectiuni";
+            cmd2.ExecuteNonQuery();
+            DataTable dt2 = new DataTable();
+            NpgsqlDataAdapter da2 = new NpgsqlDataAdapter(cmd2);
+            da2.Fill(dt2);
+            foreach (DataRow dr2 in dt2.Rows)
+            {
+                cboAfectiuni.Items.Add(dr2["denumireafectiune"]);
+            }
+            con.Close();
 
         }
 
-        NpgsqlConnection con = new NpgsqlConnection("Host=localhost;Username=postgres;Password=mariana12;Database=Clinica_stomatologica");
+        NpgsqlConnection con = new NpgsqlConnection("Host=localhost;Username=postgres;Password=admin;Database=Clinica_stomatologica");
         NpgsqlCommand cmd;
         NpgsqlCommand cmd1;
+        NpgsqlCommand cmd2;
         NpgsqlDataAdapter da;
         NpgsqlDataReader dr;
         NpgsqlDataReader dr1;
@@ -72,7 +81,6 @@ namespace SAAD_PROJECT
             con.Open();
             cmd.ExecuteNonQuery();
             NpgsqlDataReader dr;
-            int i = 0;
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -99,28 +107,46 @@ namespace SAAD_PROJECT
 
         }
 
+        private void cboAfectiuni_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach(var series in chart2.Series) {
+                series.Points.Clear();
+            }
+            cmd2 = new NpgsqlCommand("select tabel.month, sum(tabel.nrafectiune) as total from (select to_char(serviciiprestate.dataserviciuprestat, 'Month') as month, denumireafectiune, count(denumireafectiune) as nrafectiune from diagnostice inner join afectiuni on afectiuni.codafectiune=diagnostice.codafectiune inner join serviciiprestate on serviciiprestate.idserviciuprestat=diagnostice.idserviciuprestat group by serviciiprestate.dataserviciuprestat, denumireafectiune having afectiuni.denumireafectiune = '"+cboAfectiuni.Text+"') as tabel group by tabel.month",con);
+            con.Open();
+            cmd2.ExecuteNonQuery();
+            NpgsqlDataReader dr;
+            dr = cmd2.ExecuteReader();
+           
+            while (dr.Read())
+            {
+                chart2.Series["NrAfectiuni"].Points.AddXY(dr["month"].ToString(), dr["total"].ToString());
+
+            }
+            con.Close();
+
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        
-
-        private void comboBoxAfectiuni_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
+
         private void chart1_Click(object sender, EventArgs e)
         {
 
             
+        }
 
+        private void chart2_Click(object sender, EventArgs e)
+        {
 
             
         }
@@ -153,7 +179,7 @@ namespace SAAD_PROJECT
             
             NpgsqlConnection conexiune;
             string sirConectare;
-            sirConectare = "Host=localhost;Username=postgres;Password=mariana12;Database=Clinica_stomatologica";
+            sirConectare = "Host=localhost;Username=postgres;Password=admin;Database=Clinica_stomatologica";
             conexiune = new NpgsqlConnection();
             conexiune.ConnectionString = sirConectare;
             conexiune.Open();

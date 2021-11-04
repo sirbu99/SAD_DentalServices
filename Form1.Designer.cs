@@ -21,6 +21,7 @@ namespace SAAD_PROJECT
             base.Dispose(disposing);
         }
 
+       
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -32,18 +33,25 @@ namespace SAAD_PROJECT
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.cboPacienti = new System.Windows.Forms.ComboBox();
+            this.cboAfectiuni = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +67,19 @@ namespace SAAD_PROJECT
             this.cboPacienti.TabIndex = 3;
             this.cboPacienti.Text = "Cautare pacienti";
             this.cboPacienti.SelectedIndexChanged += new System.EventHandler(this.cboPacienti_SelectedIndexChanged);
+            // 
+            // cboAfectiuni
+            // 
+            this.cboAfectiuni.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboAfectiuni.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboAfectiuni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboAfectiuni.FormattingEnabled = true;
+            this.cboAfectiuni.Location = new System.Drawing.Point(1550, 50);
+            this.cboAfectiuni.Name = "cboAfectiuni";
+            this.cboAfectiuni.Size = new System.Drawing.Size(400, 33);
+            this.cboAfectiuni.TabIndex = 3;
+            this.cboAfectiuni.Text = "Cautare afectiuni";
+            this.cboAfectiuni.SelectedIndexChanged += new System.EventHandler(this.cboAfectiuni_SelectedIndexChanged);
             // 
             // listBox1
             // 
@@ -111,6 +132,17 @@ namespace SAAD_PROJECT
             this.label3.Size = new System.Drawing.Size(113, 29);
             this.label3.TabIndex = 9;
             this.label3.Text = "Afectiuni";
+
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1550, 27);
+            this.label4.Name = "label3";
+            this.label4.Size = new System.Drawing.Size(113, 29);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Alegeti o afectiune pentru a vizualiza statistica";
             // 
             // chart1
             // 
@@ -129,6 +161,25 @@ namespace SAAD_PROJECT
             this.chart1.TabIndex = 11;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            // 
+            // chart2
+            // 
+            chartArea5.Name = "ChartArea2";
+            this.chart2.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend2";
+            this.chart2.Legends.Add(legend5);
+            this.chart2.Location = new System.Drawing.Point(1550, 100);
+            this.chart2.Name = "chart2";
+            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series5.ChartArea = "ChartArea2";
+            series5.Legend = "Legend2";
+            series5.Name = "NrAfectiuni";
+            this.chart2.Series.Add(series5);
+            //this.chart2.Series[series5.Name].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            this.chart2.Size = new System.Drawing.Size(400, 300);
+            this.chart2.TabIndex = 11;
+            this.chart2.Text = "chart2";
+            this.chart2.Click += new System.EventHandler(this.cboAfectiuni_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -180,23 +231,27 @@ namespace SAAD_PROJECT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1516, 620);
+            this.ClientSize = new System.Drawing.Size(2000, 620);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.chart1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.chart2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.cboPacienti);
+            this.Controls.Add(this.cboAfectiuni);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -205,16 +260,20 @@ namespace SAAD_PROJECT
 
         #endregion
         private System.Windows.Forms.ComboBox cboPacienti;
+        private System.Windows.Forms.ComboBox cboAfectiuni;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 

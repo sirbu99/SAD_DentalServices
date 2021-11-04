@@ -30,3 +30,25 @@ C:\Users\Mariana Balasel\source\repos\SAAD_PROJECT\SAAD_PROJECT\bin\Debug\System
 C:\Users\Mariana Balasel\source\repos\SAAD_PROJECT\SAAD_PROJECT\bin\Debug\System.Threading.Channels.xml
 C:\Users\Mariana Balasel\source\repos\SAAD_PROJECT\SAAD_PROJECT\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Mariana Balasel\source\repos\SAAD_PROJECT\SAAD_PROJECT\bin\Debug\System.ValueTuple.xml
+D:\GIT\SAD_WineStore\bin\Debug\SAAD_PROJECT.exe.config
+D:\GIT\SAD_WineStore\bin\Debug\SAAD_PROJECT.exe
+D:\GIT\SAD_WineStore\bin\Debug\SAAD_PROJECT.pdb
+D:\GIT\SAD_WineStore\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\GIT\SAD_WineStore\bin\Debug\System.Buffers.dll
+D:\GIT\SAD_WineStore\bin\Debug\System.Memory.dll
+D:\GIT\SAD_WineStore\bin\Debug\System.Numerics.Vectors.dll
+D:\GIT\SAD_WineStore\bin\Debug\System.ValueTuple.dll
+D:\GIT\SAD_WineStore\bin\Debug\Npgsql.xml
+D:\GIT\SAD_WineStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\GIT\SAD_WineStore\bin\Debug\System.Text.Encodings.Web.xml
+D:\GIT\SAD_WineStore\bin\Debug\System.Text.Json.xml
+D:\GIT\SAD_WineStore\bin\Debug\System.Threading.Channels.xml
+D:\GIT\SAD_WineStore\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.csproj.AssemblyReference.cache
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.Form1.resources
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.Properties.Resources.resources
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.csproj.GenerateResource.cache
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.csproj.CoreCompileInputs.cache
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.csproj.CopyComplete
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.exe
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.pdb
