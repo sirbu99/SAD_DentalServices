@@ -1,16 +1,7 @@
 ﻿using Npgsql;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
-using Excel = Microsoft.Office.Interop.Excel;
-using System.Text.RegularExpressions;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace SAAD_PROJECT
@@ -31,7 +22,7 @@ namespace SAAD_PROJECT
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select numepersoana from persoane, pacient where codpersoana=codpacient";
             cmd.ExecuteNonQuery();
-            System.Data.DataTable dt = new System.Data.DataTable();
+            DataTable dt = new DataTable();
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
@@ -63,14 +54,14 @@ namespace SAAD_PROJECT
 
         }
 
-        NpgsqlConnection con = new NpgsqlConnection("Host=localhost;Username=postgres;Password=mariana12;Database=Clinica_stomatologica");
+        NpgsqlConnection con = new NpgsqlConnection("Host=localhost;Username=postgres;Password=admin;Database=Clinica_stomatologica");
         NpgsqlCommand cmd;
         NpgsqlCommand cmd1;
         NpgsqlCommand cmd2;
         NpgsqlDataAdapter da;
         NpgsqlDataReader dr;
         NpgsqlDataReader dr1;
-        string npgsql;
+        readonly string npgsql;
 
         private void chrAfectiuni_Click(object sender, EventArgs e)
         {
@@ -139,6 +130,14 @@ namespace SAAD_PROJECT
 
 
         }
+        private void chart5_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -151,7 +150,6 @@ namespace SAAD_PROJECT
 
             cmd.ExecuteNonQuery();
             NpgsqlDataReader dr;
-            int i = 0;
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -168,12 +166,12 @@ namespace SAAD_PROJECT
 
             NpgsqlConnection conexiune;
             string sirConectare;
-            sirConectare = "Host=localhost;Username=postgres;Password=mariana12;Database=Clinica_stomatologica";
+            sirConectare = "Host=localhost;Username=postgres;Password=admin;Database=Clinica_stomatologica";
             conexiune = new NpgsqlConnection();
             conexiune.ConnectionString = sirConectare;
             conexiune.Open();
             NpgsqlDataAdapter sda = new NpgsqlDataAdapter("select numepersoana, datanasterii, gen, adresa from persoane inner join pacient on persoane.codpersoana = pacient.codpacient", conexiune);
-            System.Data.DataTable data = new System.Data.DataTable();
+            DataTable data = new DataTable();
             sda.Fill(data);
             dataGridView1.DataSource = data;
             conexiune.Close();
@@ -264,12 +262,12 @@ namespace SAAD_PROJECT
             dtGridFacturi.ClearSelection();
             NpgsqlConnection conexiune;
             string sirConectare;
-            sirConectare = "Host=localhost;Username=postgres;Password=mariana12;Database=Clinica_stomatologica";
+            sirConectare = "Host=localhost;Username=postgres;Password=admin;Database=Clinica_stomatologica";
             conexiune = new NpgsqlConnection();
             conexiune.ConnectionString = sirConectare;
             conexiune.Open();
             NpgsqlDataAdapter sda = new NpgsqlDataAdapter("select distinct numepersoana, COALESCE(lunaianuarie.valoaretotala1, 0) AS lunaianuarie, COALESCE(lunafebruarie.valoaretotala1, 0) AS lunafebruarie, COALESCE(lunamartie.valoaretotala1, 0) AS lunamartie FROM factura inner join pacient on pacient.codpacient = factura.codpacient inner join persoane on persoane.codpersoana = pacient.codpacient left join(select codpacient, SUM(valoaretotala) as valoaretotala1 from factura  where extract(month from datafactura) = 1 group by codpacient) lunaianuarie on factura.codpacient = lunaianuarie.codpacient left join(select codpacient, SUM(valoaretotala) as valoaretotala1 from factura where extract(month from datafactura) = 2 group by codpacient) lunafebruarie on factura.codpacient = lunafebruarie.codpacient left join(select codpacient, SUM(valoaretotala) as valoaretotala1  from factura  where extract(month from datafactura) = 3 group by codpacient) lunamartie on factura.codpacient = lunamartie.codpacient   order by 1", conexiune);
-            System.Data.DataTable data = new System.Data.DataTable();
+            DataTable data = new DataTable();
             sda.Fill(data);
             dtGridFacturi.DataSource = data;
             conexiune.Close();
@@ -306,5 +304,25 @@ namespace SAAD_PROJECT
                 MessageBox.Show("Raportul facturilor pe primele 3 luni a fost exportat");
             }
         }
+        private void button9_Click(object sender, EventArgs e)
+        {     
+            foreach (var series in chart5.Series)
+            {
+                series.Points.Clear();
+            }
+            cmd2 = new NpgsqlCommand("select concat(extract(year from datafactura),'-', extract(month from datafactura)) as an_luna, round(sum(valoaretotala),2) as AvgSales from factura group by extract(year from datafactura),extract(month from datafactura) order by extract(year from datafactura),extract(month from datafactura)", con);
+            con.Open();
+            cmd2.ExecuteNonQuery();
+            NpgsqlDataReader dr;
+            dr = cmd2.ExecuteReader();
+
+            while (dr.Read())
+            {
+                chart5.Series["Incasari"].Points.AddXY(dr["an_luna"].ToString(), dr["avgsales"].ToString());
+                chart5.Series[0].ChartType = SeriesChartType.Line;
+            }
+            con.Close();
+        }
+
     }
 }

@@ -32,14 +32,12 @@ namespace SAAD_PROJECT
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.cboPacienti = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -47,6 +45,7 @@ namespace SAAD_PROJECT
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -62,8 +61,10 @@ namespace SAAD_PROJECT
             this.dtGridFacturi = new System.Windows.Forms.DataGridView();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridFacturi)).BeginInit();
@@ -75,10 +76,10 @@ namespace SAAD_PROJECT
             this.cboPacienti.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboPacienti.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPacienti.FormattingEnabled = true;
-            this.cboPacienti.Location = new System.Drawing.Point(12, 101);
+            this.cboPacienti.Location = new System.Drawing.Point(16, 101);
             this.cboPacienti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboPacienti.Name = "cboPacienti";
-            this.cboPacienti.Size = new System.Drawing.Size(227, 28);
+            this.cboPacienti.Size = new System.Drawing.Size(290, 28);
             this.cboPacienti.TabIndex = 3;
             this.cboPacienti.Text = "Cautare pacienti";
             this.cboPacienti.SelectedIndexChanged += new System.EventHandler(this.cboPacienti_SelectedIndexChanged);
@@ -103,7 +104,7 @@ namespace SAAD_PROJECT
             this.listBox2.Location = new System.Drawing.Point(12, 256);
             this.listBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(308, 44);
+            this.listBox2.Size = new System.Drawing.Size(294, 44);
             this.listBox2.TabIndex = 5;
             // 
             // label1
@@ -151,18 +152,36 @@ namespace SAAD_PROJECT
             series1.Legend = "Legend1";
             series1.Name = "NumarPacienti";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(276, 267);
+            this.chart1.Size = new System.Drawing.Size(437, 267);
             this.chart1.TabIndex = 11;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
+            // chart5
+            // 
+            chartArea2.Name = "ChartArea5";
+            this.chart5.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend5";
+            this.chart5.Legends.Add(legend2);
+            this.chart5.Location = new System.Drawing.Point(503, 450);
+            this.chart5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chart5.Name = "chart5";
+            series2.ChartArea = "ChartArea5";
+            series2.Legend = "Legend5";
+            series2.Name = "Incasari";
+            this.chart5.Series.Add(series2);
+            this.chart5.Size = new System.Drawing.Size(373, 238);
+            this.chart5.TabIndex = 31;
+            this.chart5.Text = "chart5";
+            this.chart5.Click += new System.EventHandler(this.chart5_Click);
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(348, 11);
+            this.button1.Location = new System.Drawing.Point(361, 11);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 49);
+            this.button1.Size = new System.Drawing.Size(240, 49);
             this.button1.TabIndex = 12;
             this.button1.Text = "Numarul pacientilor pe fiecare luna";
             this.button1.UseVisualStyleBackColor = true;
@@ -171,7 +190,7 @@ namespace SAAD_PROJECT
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(686, 11);
+            this.button2.Location = new System.Drawing.Point(889, 11);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(224, 49);
@@ -182,24 +201,8 @@ namespace SAAD_PROJECT
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(686, 64);
+            this.dataGridView1.Location = new System.Drawing.Point(889, 78);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -212,7 +215,7 @@ namespace SAAD_PROJECT
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 21);
+            this.textBox1.Location = new System.Drawing.Point(12, 11);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -226,7 +229,7 @@ namespace SAAD_PROJECT
             // 
             this.cboAfectiuni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboAfectiuni.FormattingEnabled = true;
-            this.cboAfectiuni.Location = new System.Drawing.Point(695, 394);
+            this.cboAfectiuni.Location = new System.Drawing.Point(918, 416);
             this.cboAfectiuni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboAfectiuni.Name = "cboAfectiuni";
             this.cboAfectiuni.Size = new System.Drawing.Size(227, 28);
@@ -235,17 +238,17 @@ namespace SAAD_PROJECT
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(686, 430);
+            chartArea3.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart2.Legends.Add(legend3);
+            this.chart2.Location = new System.Drawing.Point(918, 448);
             this.chart2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "NrAfectiuni";
-            this.chart2.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "NrAfectiuni";
+            this.chart2.Series.Add(series3);
             this.chart2.Size = new System.Drawing.Size(375, 282);
             this.chart2.TabIndex = 18;
             this.chart2.Text = "chart2";
@@ -254,7 +257,7 @@ namespace SAAD_PROJECT
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(916, 11);
+            this.button4.Location = new System.Drawing.Point(1134, 11);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(169, 49);
@@ -268,7 +271,7 @@ namespace SAAD_PROJECT
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label5.Location = new System.Drawing.Point(682, 362);
+            this.label5.Location = new System.Drawing.Point(898, 384);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(405, 20);
             this.label5.TabIndex = 23;
@@ -277,7 +280,7 @@ namespace SAAD_PROJECT
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(928, 384);
+            this.button5.Location = new System.Drawing.Point(1160, 406);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(133, 38);
@@ -289,10 +292,10 @@ namespace SAAD_PROJECT
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(535, 11);
+            this.button3.Location = new System.Drawing.Point(607, 11);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 49);
+            this.button3.Size = new System.Drawing.Size(191, 49);
             this.button3.TabIndex = 25;
             this.button3.Text = "Salveaza png";
             this.button3.UseVisualStyleBackColor = true;
@@ -301,7 +304,7 @@ namespace SAAD_PROJECT
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(951, 731);
+            this.button6.Location = new System.Drawing.Point(607, 718);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(134, 42);
             this.button6.TabIndex = 26;
@@ -311,33 +314,9 @@ namespace SAAD_PROJECT
             // 
             // dtGridFacturi
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridFacturi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtGridFacturi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtGridFacturi.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dtGridFacturi.Location = new System.Drawing.Point(36, 450);
+            this.dtGridFacturi.Location = new System.Drawing.Point(12, 450);
             this.dtGridFacturi.Name = "dtGridFacturi";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridFacturi.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtGridFacturi.RowHeadersWidth = 51;
             this.dtGridFacturi.RowTemplate.Height = 24;
             this.dtGridFacturi.Size = new System.Drawing.Size(467, 238);
@@ -346,7 +325,7 @@ namespace SAAD_PROJECT
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(36, 407);
+            this.button7.Location = new System.Drawing.Point(12, 407);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(235, 37);
             this.button7.TabIndex = 28;
@@ -357,7 +336,7 @@ namespace SAAD_PROJECT
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(282, 407);
+            this.button8.Location = new System.Drawing.Point(253, 407);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(221, 37);
             this.button8.TabIndex = 29;
@@ -365,12 +344,24 @@ namespace SAAD_PROJECT
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(577, 407);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(221, 37);
+            this.button9.TabIndex = 30;
+            this.button9.Text = "Vezi histograma";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1135, 811);
+            this.ClientSize = new System.Drawing.Size(1361, 811);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.dtGridFacturi);
@@ -386,6 +377,7 @@ namespace SAAD_PROJECT
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.chart1);
+            this.Controls.Add(this.chart5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -398,6 +390,7 @@ namespace SAAD_PROJECT
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridFacturi)).EndInit();
@@ -414,6 +407,7 @@ namespace SAAD_PROJECT
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -429,6 +423,7 @@ namespace SAAD_PROJECT
         private System.Windows.Forms.DataGridView dtGridFacturi;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.SaveFileDialog saveFileDialog2;
     }
 }

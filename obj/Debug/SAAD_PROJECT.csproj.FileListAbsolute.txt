@@ -64,3 +64,45 @@ C:\Users\Mariana Balasel\source\repos\SAAD_PROJECT\SAAD_PROJECT\bin\Debug\System
 C:\Users\Mariana Balasel\source\repos\SAAD_PROJECT\SAAD_PROJECT\bin\Debug\System.Linq.Dynamic.Core.xml
 C:\Users\Mariana Balasel\source\repos\SAAD_PROJECT\SAAD_PROJECT\obj\Debug\SAAD_PROJECT.csproj.ResolveComReference.cache
 C:\Users\Mariana Balasel\source\repos\SAAD_PROJECT\SAAD_PROJECT\obj\Debug\SAAD_PROJECT.MapPoint.resources
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.csproj.AssemblyReference.cache
+D:\GIT\SAD_WineStore\obj\Debug\Interop.InteropExtensionLib.dll
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.csproj.ResolveComReference.cache
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.Form1.resources
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.MapPoint.resources
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.Properties.Resources.resources
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.csproj.GenerateResource.cache
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.csproj.CoreCompileInputs.cache
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.exe
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.pdb
+D:\GIT\SAD_WineStore\bin\Debug\SAAD_PROJECT.exe.config
+D:\GIT\SAD_WineStore\bin\Debug\SAAD_PROJECT.exe
+D:\GIT\SAD_WineStore\bin\Debug\SAAD_PROJECT.pdb
+D:\GIT\SAD_WineStore\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\GIT\SAD_WineStore\bin\Debug\System.Buffers.dll
+D:\GIT\SAD_WineStore\bin\Debug\System.Memory.dll
+D:\GIT\SAD_WineStore\bin\Debug\System.Numerics.Vectors.dll
+D:\GIT\SAD_WineStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\GIT\SAD_WineStore\bin\Debug\System.ValueTuple.dll
+D:\GIT\SAD_WineStore\bin\Debug\BouncyCastle.Crypto.xml
+D:\GIT\SAD_WineStore\bin\Debug\ClosedXML.pdb
+D:\GIT\SAD_WineStore\bin\Debug\ClosedXML.xml
+D:\GIT\SAD_WineStore\bin\Debug\DocumentFormat.OpenXml.xml
+D:\GIT\SAD_WineStore\bin\Debug\ExcelMapper.xml
+D:\GIT\SAD_WineStore\bin\Debug\ExcelNumberFormat.xml
+D:\GIT\SAD_WineStore\bin\Debug\ICSharpCode.SharpZipLib.pdb
+D:\GIT\SAD_WineStore\bin\Debug\ICSharpCode.SharpZipLib.xml
+D:\GIT\SAD_WineStore\bin\Debug\MoreLinq.xml
+D:\GIT\SAD_WineStore\bin\Debug\Npgsql.xml
+D:\GIT\SAD_WineStore\bin\Debug\NPOI.pdb
+D:\GIT\SAD_WineStore\bin\Debug\NPOI.xml
+D:\GIT\SAD_WineStore\bin\Debug\NPOI.OOXML.pdb
+D:\GIT\SAD_WineStore\bin\Debug\NPOI.OOXML.xml
+D:\GIT\SAD_WineStore\bin\Debug\NPOI.OpenXml4Net.pdb
+D:\GIT\SAD_WineStore\bin\Debug\NPOI.OpenXmlFormats.pdb
+D:\GIT\SAD_WineStore\bin\Debug\System.Linq.Dynamic.Core.pdb
+D:\GIT\SAD_WineStore\bin\Debug\System.Linq.Dynamic.Core.xml
+D:\GIT\SAD_WineStore\bin\Debug\System.Text.Encodings.Web.xml
+D:\GIT\SAD_WineStore\bin\Debug\System.Text.Json.xml
+D:\GIT\SAD_WineStore\bin\Debug\System.Threading.Channels.xml
+D:\GIT\SAD_WineStore\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\GIT\SAD_WineStore\obj\Debug\SAAD_PROJECT.csproj.CopyComplete
